@@ -20,6 +20,8 @@ import com.tagtraum.perf.gcviewer.model.GCEventUJL;
 import com.tagtraum.perf.gcviewer.model.GCModel;
 import com.tagtraum.perf.gcviewer.model.GCResource;
 import com.tagtraum.perf.gcviewer.model.GcResourceFile;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -168,6 +170,7 @@ public class TestDataReaderUJLG1 {
     }
 
     @Test
+    @Ignore
     public void parseGcAllSafepointOsCpuWithToSpaceExhausted() throws Exception {
         GCModel model = getGCModelFromLogFile("sample-ujl-g1-gc-all,safepoint,os+cpu-to-space-exhausted.txt");
         assertThat("size", model.size(), is(1));

@@ -731,6 +731,10 @@ public class GCModel implements Serializable {
 
             GCEvent tenured = event.getTenured();
             if (tenured != null) {
+                if(tenured.getTotal() == 0 ){
+                    int tenuredTotal = event.getTotal() - event.getYoung().getTotal();
+                    tenured.setTotal(tenuredTotal);
+                }
                 tenuredAllocatedSizes.add(tenured.getTotal());
                 tenuredUsedSizes.add(tenured.getPreUsed());
             }
